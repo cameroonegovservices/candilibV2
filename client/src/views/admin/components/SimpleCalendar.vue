@@ -1,16 +1,26 @@
 <template>
   <div class="calendar-month">
-    <div>
-      <h2>{{calendarTitle}}</h2>
+    <div class="calendar-weekday" v-for="weekday in weekdays" :key="weekday">
+      <span>{{weekday}}</span>
     </div>
     <div class="calendar-day" v-for="(day, i) in days" :key="i">
-      <span>{{day}}</span>
+      <span>{{day.date}}</span>
     </div>
   </div>
 </template>
 
 <script>
 import { getDataOfTheMonth } from '@/util'
+
+const weekdays = [
+  'lundi',
+  'mardi',
+  'mercredi',
+  'jeudi',
+  'vendredi',
+  'samedi',
+  'dimanche',
+]
 
 export default {
   props: {
@@ -19,9 +29,9 @@ export default {
 
   data () {
     return {
+      weekdays: weekdays,
       month: getDataOfTheMonth(),
       days: [],
-      calendarTitle: '',
     }
   },
 
@@ -31,12 +41,12 @@ export default {
 
   methods: {
     updateCalendar () {
-      const { daysAfter, daysBefore, daysInMonth, daysInLastMonth } = getDataOfTheMonth()
-      this.days = [
-        ...Array(daysBefore).fill(true).map((el, i) => daysInLastMonth - i),
-        ...Array(daysInMonth).fill(true).map((el, i) => i + 1),
-        ...Array(daysAfter).fill(true).map((el, i) => i + 1),
+      const { lastDaysOfPreviousMonth, daysOfSelectedMonth, nextDaysOfNextMonth } = getDataOfTheMonth()
 
+      this.days = [
+        ...lastDaysOfPreviousMonth,
+        ...daysOfSelectedMonth,
+        ...nextDaysOfNextMonth,
       ]
     },
   },
@@ -55,6 +65,15 @@ export default {
   flex-grow: 1;
   flex-shrink: 0;
   height: 10em;
+  border-width: 0 1px 1px 0;
+  border-color: #bbb;
+  border-style: solid;
+}
+
+.calendar-weekday {
+  flex-basis: 14%;
+  flex-grow: 1;
+  flex-shrink: 0;
   border-width: 0 1px 1px 0;
   border-color: #bbb;
   border-style: solid;

@@ -19,12 +19,12 @@ describe('calendar', () => {
   })
 
   it('Should return 31', () => {
-    const { daysInLastMonth } = getDataOfTheMonth(1, 2019)
-    expect(daysInLastMonth).toBe(31)
+    const { daysInPreviousMonth } = getDataOfTheMonth(1, 2019)
+    expect(daysInPreviousMonth).toBe(31)
   })
 
   it('Should return 29', () => {
-    const { daysInLastMonth } = getDataOfTheMonth(3, 2016)
-    expect(daysInLastMonth).toBe(29)
+    const { daysInPreviousMonth } = getDataOfTheMonth(3, 2016)
+    expect(daysInPreviousMonth).toBe(29)
   })
 })
