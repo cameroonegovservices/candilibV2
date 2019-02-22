@@ -1,5 +1,20 @@
 <template>
-  <pure-app-snackbar :message="message" />
+  <v-snackbar
+    :value="message.show"
+    :color="message.color"
+    :timeout="message.timeout"
+    bottom
+  >
+    {{ message.content }}
+    <v-btn icon
+      flat
+      @click="onClose"
+    >
+      <v-icon color="white">
+        close
+      </v-icon>
+    </v-btn>
+  </v-snackbar>
 </template>
 
 <script>

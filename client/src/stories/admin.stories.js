@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/vue'
 
-import Vuex from 'vuex'
+import router from './utils/min-router-for-stories'
+import createStore from './utils/create-store-for-stories'
 
 import AdminLogin from '../views/admin/components/Login.vue'
 import AdminCalendar from '../views/admin/components/AdminCalendar.vue'
@@ -23,6 +24,7 @@ storiesOf('Admin Components', module)
   .add('AdminHeader', () => ({
     components: { AdminHeader },
     template: '<admin-header />',
+    router,
   }))
   .add('AdminFooter', () => ({
     components: { AdminFooter },
@@ -31,11 +33,18 @@ storiesOf('Admin Components', module)
   .add('AdminAurige', () => ({
     components: { AdminAurige },
     template: '<admin-aurige />',
+    store: createStore({
+      state: {
+        aurige: {
+          candidats: [],
+        },
+      },
+    }),
   }))
   .add('AdminCandidatsList', () => ({
     components: { AdminCandidatsList },
     template: '<admin-candidats-list />',
-    store: new Vuex.Store({
+    store: createStore({
       state: {
         candidats: {
           list: [{
@@ -58,9 +67,20 @@ storiesOf('Admin Components', module)
   }))
   .add('AdminWhitelist', () => ({
     components: { AdminWhitelist },
-    store: new Vuex.Store({
+    store: createStore({
       state: {
-        whitelist: [],
+        whitelist: {
+          list: [
+            {
+              _id: '5c701e954b20b04e52ff3cbc',
+              email: 'jean@dupont.fr',
+            },
+            {
+              _id: '5c701e954b20b04e52ff3cbd',
+              email: 'jacques@dupond.fr',
+            },
+          ],
+        },
       },
       actions: {
         FETCH_WHITELIST_REQUEST: () => {},
