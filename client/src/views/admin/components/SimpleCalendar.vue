@@ -4,7 +4,7 @@
       <span>{{weekday}}</span>
     </div>
     <div class="calendar-day" v-for="(day, i) in days" :key="i">
-      <span>{{day.date}}</span>
+      <span>{{day.day}}</span>
     </div>
   </div>
 </template>

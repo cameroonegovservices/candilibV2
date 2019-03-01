@@ -85,6 +85,7 @@ h3 {
   backface-visibility: hidden;
   transform: translateZ(0) scale(1, 1);
   color: transparent;
+  border: none;
 
   &::after {
     position: absolute;
