@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/vue'
-import { action } from '@storybook/addon-actions'
 
 import Vuex from 'vuex'
 import Router from 'vue-router'
@@ -13,7 +12,6 @@ import AdminAurige from '../views/admin/components/Aurige.vue'
 import AdminCandidatsList from '../views/admin/components/CandidatsList.vue'
 import AdminWhitelist from '../views/admin/components/Whitelist.vue'
 import AurigeValidation from '../views/admin/components/AurigeValidation.vue'
-import AgGridAurigeStatusFilter from '../views/admin/components/AgGridAurigeStatusFilter.vue'
 
 import store from '../store'
 
@@ -120,8 +118,3 @@ storiesOf('Admin Components', module)
     template: '<aurige-validation style="background-color: #3d4353;"/>',
   })
   )
-  .add('AgGridAurigeStatusFilter', () => ({
-    components: { AgGridAurigeStatusFilter },
-    template: '<ag-grid-aurige-status-filter />',
-    methods: { action: action('clicked') },
-  }))
