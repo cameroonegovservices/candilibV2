@@ -36,49 +36,55 @@
         </p>
       </div>
 
-      <div class="text--center">
+      <div class="text--center" v-show="!timeSlots.confirmed">
         <p>
           <strong>Avez-vous pensez à vérifier :</strong>
         </p>
-      </div>
-      <v-card-actions>
-        <v-form
-          class="u-full-width"
-          :aria-disabled="disabled"
-          :disabled="disabled"
-          @submit.prevent="confirmReservation"
-        >
-          <v-checkbox
-            v-model="selectedCheckBox"
-            label="qu’une personne peu vous accompagner *"
-            value="companion"
-          ></v-checkbox>
-          <v-checkbox
-            v-model="selectedCheckBox"
-            label="qu’une voiture à double commande est disponible *"
-            value="doubleControlCar"
-          ></v-checkbox>
+        <v-card-actions>
+          <v-form
+            class="u-full-width"
+            :aria-disabled="disabled"
+            :disabled="disabled"
+            @submit.prevent="confirmReservation"
+          >
+            <v-checkbox
+              v-model="selectedCheckBox"
+              label="qu’une personne peu vous accompagner *"
+              value="companion"
+            ></v-checkbox>
+            <v-checkbox
+              v-model="selectedCheckBox"
+              label="qu’une voiture à double commande est disponible *"
+              value="doubleControlCar"
+            ></v-checkbox>
 
-          <v-flex d-flex>
-            <v-spacer></v-spacer>
-            <v-btn
-              outline
-              color="red"
-              @click="goToSelectTimeSlot()"
-            >
-              Annuler
-            </v-btn>
-            <v-btn
-              :aria-disabled="disabled"
-              :disabled="disabled"
-              type="submit"
-              color="primary"
-            >
-              Confirmer
-            </v-btn>
-          </v-flex>
-        </v-form>
-      </v-card-actions>
+            <v-flex d-flex>
+              <v-spacer></v-spacer>
+              <v-btn
+                outline
+                color="red"
+                @click="goToSelectTimeSlot()"
+              >
+                Annuler
+              </v-btn>
+              <v-btn
+                :aria-disabled="disabled"
+                :disabled="disabled"
+                type="submit"
+                color="primary"
+              >
+                Confirmer
+              </v-btn>
+            </v-flex>
+          </v-form>
+        </v-card-actions>
+      </div>
+      <div v-show="timeSlots.confirmed">
+        <h4 class="text--center">
+          Votre réservation est confirmée
+          <v-icon color="success">check</v-icon>
+        </h4>
+      </div>
     </v-card>
   </v-container>
 </template>
@@ -167,3 +173,10 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+h4 {
+  text-transform: uppercase;
+  padding-bottom: 2em;
+}
+</style>
