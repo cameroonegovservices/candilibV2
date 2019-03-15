@@ -1,0 +1,34 @@
+{
+  "name": "candilibv2",
+  "version": "2.0.0-alpha-0",
+  "description": "Réservez votre place d'examen pratique du permis de conduire",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LAB-MI/candilibV2.git"
+  },
+  "keywords": [
+    "candidat",
+    "libre",
+    "permis",
+    "conduire",
+    "place",
+    "examen",
+    "réserver",
+    "examen",
+    "pratique"
+  ],
+  "author": "Ministère de l'Intérieur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LAB-MI/candilibV2/issues"
+  },
+  "homepage": "https://github.com/LAB-MI/candilibV2#readme"
+}
