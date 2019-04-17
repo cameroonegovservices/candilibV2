@@ -202,6 +202,13 @@ export default {
       return json
     },
 
+    async searchCandidats (search) {
+      const json = await apiClient.get(`${apiPaths.admin.searchCandidats}${search || ''}`, {
+        headers: getHeadersForAdminJson(),
+      })
+      return json
+    },
+
     async getCreneaux () {
       const json = await apiClient.get(apiPaths.creneaux(), {
         headers: getHeadersForAdminJson(),
