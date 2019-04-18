@@ -1,6 +1,7 @@
 import express from 'express'
 
 import { getCandidats, importCandidats } from './candidats.controllers'
+import { getInspecteurs } from './inspecteurs.controllers'
 import { getPlaces, importPlaces } from './places.controllers'
 import {
   getWhitelisted,
@@ -17,6 +18,7 @@ router.use(verifyAdminLevel)
 router.get('/candidats', getCandidats)
 router.post('/candidats', importCandidats)
 router.get('/centres', getCentres)
+router.get('/inspecteurs', getInspecteurs)
 router.post('/places', importPlaces)
 router.get('/places', getPlaces)
 

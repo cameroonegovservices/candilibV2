@@ -25,6 +25,7 @@ const adminApiPaths = (isBuildWithAll || isBuildWithAdmin) && {
   uploadCandidatsJson: `${apiPrefix}/admin/candidats`,
   exportCsv: `${apiPrefix}/admin/candidats?for=aurige&format=csv`,
   searchCandidats: `${apiPrefix}/admin/candidats?matching=`,
+  searchInspecteurs: `${apiPrefix}/admin/inspecteurs?matching=`,
   uploadPlacesCSV: `${apiPrefix}/admin/places`,
   whitelist: `${apiPrefix}/admin/whitelisted`,
 }
