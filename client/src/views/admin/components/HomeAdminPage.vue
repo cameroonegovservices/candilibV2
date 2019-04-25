@@ -5,18 +5,18 @@
     </h1>
     <div class="u-flex  u-flex--center">
       <search-candidat class="search-input" />
-      <search-inspecteurs class="search-input" />
+      <search-inspecteur class="search-input" />
     </div>
   </div>
 </template>
 
 <script>
-import SearchInspecteurs from './SearchInspecteurs'
+import SearchInspecteur from './SearchInspecteur'
 import SearchCandidat from './SearchCandidat'
 
 export default {
   components: {
-    SearchInspecteurs,
+    SearchInspecteur,
     SearchCandidat,
   },
 }
