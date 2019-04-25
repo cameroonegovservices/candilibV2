@@ -4,20 +4,20 @@
       Home page admin
     </h1>
     <div class="u-flex  u-flex--center">
-      <search-candidats class="search-input" />
+      <search-candidat class="search-input" />
       <search-inspecteurs class="search-input" />
     </div>
   </div>
 </template>
 
 <script>
-import SearchCandidats from './SearchCandidats'
 import SearchInspecteurs from './SearchInspecteurs'
+import SearchCandidat from './SearchCandidat'
 
 export default {
   components: {
-    SearchCandidats,
     SearchInspecteurs,
+    SearchCandidat,
   },
 }
 </script>

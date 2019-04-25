@@ -2,11 +2,10 @@
   <v-autocomplete
     v-model="selectedCandidat"
     label="Candidats"
-    hint="Chercher un candidat par son nom"
     append-outer-icon="search"
     placeholder="Dupont"
     :items="candidats"
-    :search-input.sync="searchCandidats"
+    :search-input.sync="autocompleteCandidats"
     return-object
     item-text="nomNaissance"
     item-value="_id"
@@ -14,12 +13,12 @@
 </template>
 
 <script>
-import { FETCH_SEARCH_CANDIDATS_REQUEST } from '@/store'
+import { FETCH_AUTOCOMPLETE_CANDIDATS_REQUEST } from '@/store'
 
 export default {
   data () {
     return {
-      searchCandidats: undefined,
+      autocompleteCandidats: undefined,
       selectedCandidat: undefined,
     }
   },
@@ -31,13 +30,12 @@ export default {
   },
 
   watch: {
-    searchCandidats (searchQuery) {
-      this.$store.dispatch(FETCH_SEARCH_CANDIDATS_REQUEST, searchQuery)
+    autocompleteCandidats (searchQuery) {
+      this.$store.dispatch(FETCH_AUTOCOMPLETE_CANDIDATS_REQUEST, searchQuery)
     },
     selectedCandidat (selectedCandidat) {
       this.$emit('selection', selectedCandidat)
     },
   },
 }
-
 </script>
