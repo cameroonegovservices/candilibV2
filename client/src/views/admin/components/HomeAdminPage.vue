@@ -4,7 +4,7 @@
       Home page admin
     </h1>
     <div class="u-flex  u-flex--center">
-      <search-candidat class="search-input" />
+      <search-candidat class="search-input"/>
       <search-inspecteur class="search-input" />
     </div>
   </div>

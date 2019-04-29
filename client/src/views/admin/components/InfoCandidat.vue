@@ -8,12 +8,12 @@
       :key="key"
       class="container"
     >
-      <div class="label">
+      <div v-if="fillterKey(key)" class="label">
         <strong>
           {{ key }}&nbsp;:
         </strong>
       </div>
-      <div class="value">
+      <div v-if="fillterKey(key)" class="value">
         {{ value }}
       </div>
     </div>
@@ -30,6 +30,12 @@ export default {
 
   props: {
     candidat: Object,
+  },
+
+  methods: {
+    fillterKey (keyToCheck) {
+      return !['__v'].includes(keyToCheck)
+    },
   },
 }
 </script>
@@ -60,7 +66,7 @@ export default {
 }
 
 .label {
-  flex-basis: 7rem;
+  flex-basis: 1rem;
 }
 
 .value {

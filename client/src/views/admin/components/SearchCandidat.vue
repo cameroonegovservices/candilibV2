@@ -14,8 +14,11 @@
 
 <script>
 import AutocompleteCandidats from './AutocompleteCandidats'
+import InfoCandidat from './InfoCandidat'
 
 export const dict = {
+  isValidatedByAurige: 'Status Aurige',
+  isValidatedEmail: 'Email validé',
   adresse: 'Adresse',
   codeNeph: 'NEPH',
   email: 'Email',
@@ -28,6 +31,7 @@ export const dict = {
 export default {
   components: {
     AutocompleteCandidats,
+    InfoCandidat,
   },
 
   data () {
@@ -81,7 +85,7 @@ export default {
 }
 
 .label {
-  flex-basis: 7rem;
+  flex-basis: 7 rem;
 }
 
 .value {

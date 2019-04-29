@@ -1,5 +1,5 @@
 <template>
-     <div  class="inspecteur-info">
+    <div  class="inspecteur-info">
       <div class="title">
         <h3>{{ title }}</h3>
       </div>
@@ -8,14 +8,14 @@
         :key="key"
         class="container"
       >
-         <div class="label">
-           <strong>
-             {{ key }}&nbsp;:
-           </strong>
-         </div>
-         <div class="value">
-           {{ value }}
-         </div>
+        <div v-if="fillterKey(key)" class="label">
+          <strong>
+            {{ key }}&nbsp;:
+          </strong>
+        </div>
+        <div v-if="fillterKey(key)" class="value">
+          {{ value }}
+        </div>
       </div>
     </div>
 </template>
@@ -31,7 +31,13 @@ export default {
   props: {
     inspecteur: Object,
   },
+  methods: {
+    fillterKey (keyToCheck) {
+      return !['__v'].includes(keyToCheck)
+    },
+  },
 }
+
 </script>
 
 <style lang="stylus" scoped>
