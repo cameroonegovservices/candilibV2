@@ -26,6 +26,9 @@ export const inspecteurFields = {
     match: matriculeRegex,
     unique: true,
   },
+  departement: {
+    type: String,
+  },
 }
 
 const inspecteurSchema = new Schema(inspecteurFields)
@@ -48,6 +51,13 @@ inspecteurSchema.pre('save', async function preSave () {
     inspecteur.nom.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 
   inspecteur.email = inspecteur.email.toLowerCase()
+})
+
+inspecteurSchema.index({
+  nom: 'text',
+  prenom: 'text',
+  mail: 'text',
+  matricule: 'text',
 })
 
 export default mongoose.model('inspecteur', inspecteurSchema)
