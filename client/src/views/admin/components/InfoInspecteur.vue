@@ -3,7 +3,10 @@
       <div class="title">
         <h3>{{ title }}</h3>
       </div>
-      <div
+      <v-layout column>
+      <v-card color="white">
+        <v-flex xs12>
+        <div
         v-for="([key, value]) in inspecteur"
         :key="key"
         class="container"
@@ -17,6 +20,9 @@
           {{ value }}
         </div>
       </div>
+      </v-flex>
+    </v-card>
+      </v-layout>
     </div>
 </template>
 
@@ -31,19 +37,20 @@ export default {
   props: {
     inspecteur: Object,
   },
+
   methods: {
     fillterKey (keyToCheck) {
       return !['__v'].includes(keyToCheck)
     },
   },
 }
-
 </script>
 
 <style lang="stylus" scoped>
 
 .title {
   margin: auto;
+  padding-bottom: 1 rem;
   text-align: center;
   font-family: "Raleway", sans-serif;
   font-size: 1 rem;
@@ -57,16 +64,17 @@ export default {
   margin: 15 px;
   padding: 15 px;
   font-family: 'Poppins-Regular', Arial, Helvetica, sans-serif;
-  box-shadow: 0 0 2px #555;
+  box-shadow: 0 0 1px #555;
 }
 
 .container {
+  margin: 5px;
   display: flex;
   width: 100%;
 }
 
 .label {
-  flex-basis: 10rem;
+  flex-basis: 9 rem;
 }
 
 .value {

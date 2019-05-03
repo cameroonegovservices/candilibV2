@@ -5,11 +5,11 @@ import { dict } from './SearchCandidat'
 
 let candidat = {
   _id: 1,
-  adresse: 'rue des marguerites',
   codeNeph: '012345678910',
-  email: 'caro@email.fr',
   nomNaissance: 'Caroline',
   prenom: 'Caroline',
+  adresse: 'rue des marguerites',
+  email: 'caro@email.fr',
   portable: ' 0102030405',
   presignedUpAt: '2019-04-15',
 }
@@ -37,4 +37,5 @@ storiesOf('Admin/InfoCandidat', module)
         candidat,
       }
     },
+
   }))

@@ -52,7 +52,6 @@ export default {
             [(dict[key] || key), value],
           ]
         }, [])
-      console.log('TCL: displayInspecteurInfo -> this.inspecteur', this.inspecteur)
     },
   },
 }

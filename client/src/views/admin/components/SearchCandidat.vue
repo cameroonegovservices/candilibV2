@@ -17,15 +17,20 @@ import AutocompleteCandidats from './AutocompleteCandidats'
 import InfoCandidat from './InfoCandidat'
 
 export const dict = {
-  isValidatedByAurige: 'Status Aurige',
-  isValidatedEmail: 'Email validé',
-  adresse: 'Adresse',
   codeNeph: 'NEPH',
-  email: 'Email',
   nomNaissance: 'Nom',
   prenom: 'Prénom',
+  email: 'Email',
   portable: 'Portable',
+  adresse: 'Adresse',
   presignedUpAt: 'Inscrit le',
+  isValidatedByAurige: 'Status Aurige',
+  isValidatedEmail: 'Email validé',
+  dateReussiteETG: 'ETG',
+  canBookFrom: 'Reservation possible dès',
+  dateDernierEchecPratique: 'Dernier échec pratique',
+  reussitePratique: 'Réussite pratique',
+  place: 'Place',
 }
 
 export default {
@@ -58,37 +63,3 @@ export default {
   },
 }
 </script>
-
-<style lang="stylus" scoped>
-
-.title-style {
-  margin: auto;
-  text-align: center;
-  font-family: "Raleway", sans-serif;
-  font-size: 1 rem;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.candidat-info {
-  display: flex;
-  flex-direction: column;
-  margin: 15 px;
-  padding: 15 px;
-  font-family: 'Poppins-Regular', Arial, Helvetica, sans-serif;
-  box-shadow: 0 0 2px #555;
-}
-
-.container {
-  display: flex;
-  width: 100%;
-}
-
-.label {
-  flex-basis: 7 rem;
-}
-
-.value {
-  flex-grow: 1;
-}
-</style>
