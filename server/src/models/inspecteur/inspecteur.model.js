@@ -51,4 +51,4 @@ inspecteurSchema.pre('save', async function preSave () {
   inspecteur.email = inspecteur.email.toLowerCase()
 })
 
-export default mongoose.model('inspecteur', inspecteurSchema)
+export default mongoose.model('Inspecteur', inspecteurSchema)
