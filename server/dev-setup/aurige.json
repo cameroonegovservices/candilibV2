@@ -86,5 +86,16 @@
         "dateDernierEchecPratique": "2019-01-10T00:00:00.000Z",
         "reussitePratique": "",
         "candidatExistant": "OK"
-    }
+    },
+    {
+      "codeNeph": "2134567877",
+      "nomNaissance": "LINE",
+      "nomUsage": "",
+      "prenom": "CARO",
+      "email": "caro@line.fr",
+      "dateReussiteETG": "2018-07-11T00:00:00.000Z",
+      "dateDernierEchecPratique": "2019-05-10T00:00:00.000Z",
+      "reussitePratique": "",
+      "candidatExistant": "OK"
+  }
 ]
