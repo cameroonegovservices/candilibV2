@@ -75,7 +75,7 @@ COPY package.json package-lock.json ./
 RUN npm --no-git-tag-version version ${APP_VERSION} && \
     npm install --production && \
     npm config set audit-level moderate && \
-    npm audit --json --registry=https://registry.npmjs.org || ${NPM_AUDIT_DRY_RUN:-false} && \
+    npm --loglevel http audit --json --registry=https://registry.npmjs.org || ${NPM_AUDIT_DRY_RUN:-false} && \
     npm cache clean --force
 
 # Deliver the dist folder with Nginx
