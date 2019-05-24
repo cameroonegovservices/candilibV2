@@ -6,7 +6,11 @@ import getMailData from './message-templates'
 import config, { smtpOptions } from '../../config'
 import { appLogger, techLogger } from '../../util'
 
-export const sendMail = async (to, { subject, content: html }) => {
+export const sendMail = async (
+  to,
+  { subject, content: html },
+  fileAttachement
+) => {
   const transporter = nodemailer.createTransport(smtpTransport(smtpOptions))
 
   transporter.use('compile', htmlToText())
@@ -16,6 +20,16 @@ export const sendMail = async (to, { subject, content: html }) => {
     to,
     subject,
     html,
+  }
+
+  if (fileAttachement) {
+    mailOptions.attachments = [
+      {
+        filename: fileAttachement.fileName,
+        content: fileAttachement.buffer,
+        contentType: 'application/pdf',
+      },
+    ]
   }
 
   try {
